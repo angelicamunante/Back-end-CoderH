@@ -1,14 +1,9 @@
-const nombre = String;
-const apellido = String;
-const libros = [];
-const mascotas = []
-
 class Usuario {
   constructor ( nombre , apellido , libros ,  mascotas ) {
     this.nombre = nombre;
     this.apellido = apellido;
     this.libros = libros;
-    this.mascotas = mascotas
+    this.mascotas = mascotas;
   }
   
   getFullName() {
@@ -32,9 +27,18 @@ class Usuario {
   }
 
   getBookNames() {
-    libros.map(function(libro){
-      return `${libro.nombre}`
-    })
+    let nombreLibros = this.libros.map(function(libro) {
+      return libro.nombre;
+    });
+    return nombreLibros;
   }
-
 }
+
+let usuario = new Usuario('Alvaro', 'Palacios', [], []);
+console.log(usuario.getFullName())
+usuario.addMascota('Yuna');
+usuario.addMascota('Zeus')
+console.log(usuario.countMascotas());
+usuario.addBook('libro 1', 'Shakespeare');
+usuario.addBook('libro 2', 'autor 2');
+console.log(usuario.getBookNames());
