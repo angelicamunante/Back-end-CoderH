@@ -1,0 +1,14 @@
+[
+  {
+    "title": "JavaScript05",
+    "price": 300,
+    "thumbnail": "https://www.coderhouse.com.pe/javascript",
+    "id": 2
+  },
+  {
+    "title": "JavaScript01",
+    "price": 230,
+    "thumbnail": "https://www.coderhouse.com.pe/javascript",
+    "id": 3
+  }
+]

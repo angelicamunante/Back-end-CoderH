@@ -39,6 +39,6 @@ console.log(usuario.getFullName())
 usuario.addMascota('Yuna');
 usuario.addMascota('Zeus')
 console.log(usuario.countMascotas());
-usuario.addBook('libro 1', 'Shakespeare');
+usuario.addBook('libro 1', 'autor 1');
 usuario.addBook('libro 2', 'autor 2');
 console.log(usuario.getBookNames());
