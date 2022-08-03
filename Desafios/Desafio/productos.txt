@@ -1,14 +1,14 @@
 [
   {
-    "title": "JavaScript05",
-    "price": 300,
+    "title": "JavaScript",
+    "price": 200,
     "thumbnail": "https://www.coderhouse.com.pe/javascript",
-    "id": 2
+    "id": 1
   },
   {
-    "title": "JavaScript01",
-    "price": 230,
+    "title": "JavaScript02",
+    "price": 220,
     "thumbnail": "https://www.coderhouse.com.pe/javascript",
-    "id": 3
+    "id": 2
   }
 ]
