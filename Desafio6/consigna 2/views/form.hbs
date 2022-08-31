@@ -1,0 +1,56 @@
+<div class="cover-container d-flex w-100 h-100 p-lg-5 mx-auto flex-column">
+  <main class="p-lg-5">
+    <section class="p-3">
+      <div class="rounded-4 shadow bg-light text-bg-light p-5">
+        <div class="p-3">
+          <h3 class="fw-bold">Formulario</h3>
+        </div>
+        <div class="p-3">
+          <form>
+            <div class="form-group pb-3">
+              <label for="title">Titulo</label>
+              <input type="text" class="form-control" id="title" placeholder="Titulo">
+            </div>
+            <div class="form-group pb-3">
+              <label for="price">Precio</label>
+              <input type="number" class="form-control" id="price" placeholder="Precio">
+            </div>
+            <div class="form-group pb-3">
+              <label for="thumbnail">Miniatura</label>
+              <input type="text" class="form-control" id="thumbnail" placeholder="Miniatura">
+            </div>
+            <button type="submit" class="btn btn-primary" id="product-add">Guardar producto</button>
+          </form>
+        </div>
+        <hr>
+        <div class="p-3">
+          <h3 class="fw-bold">Lista de productos</h3>
+        </div>
+        <div class="p-3" id="products-table">
+
+        </div>
+      </div>
+    </section>
+    <section class="p-3">
+      <div class="rounded-4 shadow bg-light text-bg-light p-5">
+        <div class="p-3">
+          <h3 class="fw-bold">Centro de mensajes</h3>
+        </div>
+        <form>
+          <div class="rounded-2 bg-dark text-bg-dark p-3 mb-3" id="message-board">
+
+          </div>
+          <div class="form-group pb-3">
+            <label for="title">E-Mail</label>
+            <input type="email" class="form-control" id="email" placeholder="E-Mail">
+          </div>
+          <div class="form-group pb-3">
+            <label for="price">Mensaje</label>
+            <input type="text" class="form-control" id="message" placeholder="Mensaje">
+          </div>
+          <button type="submit" class="btn btn-success" id="send-message">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>

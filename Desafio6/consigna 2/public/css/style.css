@@ -1,0 +1,21 @@
+span {
+  margin-right: .5rem;
+}
+
+span:last-of-type {
+  margin-right: 0;
+}
+
+.message-sender {
+  color: blue;
+  font-weight: bold;
+}
+
+.message-date {
+  color: brown;
+}
+
+.message-text {
+  color: green;
+  font-style: italic;
+}
