@@ -1,0 +1,128 @@
+
+1. Agregar 10 documentos con valores distintos a las colecciones mensajes y productos. 
+  El formato de los documentos debe estar en correspondencia con el que venimos utilizando en el entregable con base de datos MariaDB. 
+2. Definir las claves de los documentos en relación a los campos de las tablas de esa base. En el caso de los productos, 
+  poner valores al campo precio entre los 100 y 5000 pesos(eligiendo valores intermedios, ej: 120, 580, 900, 1280, 1700, 2300, 2860, 
+  3350, 4320, 4990). 
+
+    use ecommerce
+
+    db.productos.insertOne({name: "Lapiz", price: 120 , stock: 15,thumbnail: "foto lapiz"})
+
+    db.productos.insertMany([{name: "libro", price: 580 , stock: 10 ,thumbnail: "foto libro"},{name: "Mesa para laptop", price: 900 , stock: 15 ,thumbnail: "foto mesa para laptop"}])
+
+    db.productos.insertMany([{name: "Lienzo", price: 1280 , stock: 8,thumbnail: "foto lienzo"},{name: "Espejo", price: 1700 , stock: 8,thumbnail: "foto espejo"}])
+
+    db.productos.insertMany([{name: "Juego de mesa", price: 2300 , stock: 15,thumbnail: "foto juego de mesa"},{name: "Pack almohadas", price: 2860 , stock: 8,thumbnail: "Foto pack almohadas"}])
+
+    db.productos.insertMany([{name: "Teclado Inalambrico", price: 3350 , stock: 8,thumbnail: "Foto Teclado Inalambrico"},{name: "Edredon", price: 4320 , stock: 8,thumbnail: "Foto Edredon"}])
+
+    db.mensajes.insertMany([{
+    userName: "Laura",
+    date: "17/09/2022 23:10:51",
+    message: "Hola"
+    },
+    {
+    userName: "Mateo",
+    date: "17/09/2022 23:11:15",
+    message: "Hi!"
+    },
+    {
+    userName: "Angel",
+    date: "17/09/2022 23:11:53",
+    message: "Buenas tardes"
+    },
+    {
+    userName: "Jess",
+    date: "17/09/2022 02:41:28",
+    message: "Que tal?"
+    },
+    {
+    userName: "Alvaro",
+    date: "17/09/2022 02:41:45",
+    message: "Heyyyyyy!!!!"
+    },
+    {
+    userName: "Laura",
+    date: "17/09/2022 23:10:51",
+    message: "Bienvenidos"
+    },
+    {
+    userName: "Mateo",
+    date: "17/09/2022 23:11:15",
+    message: "Bien!"
+    },
+    {
+    userName: "Alvaro",
+    date: "17/09/2022 23:11:53",
+    message: "Vamos!"
+    },
+    {
+    userName: "Cristian",
+    date: "17/09/2022 02:41:28",
+    message: "Go!!"
+    },
+    {
+    userName: "Cristian",
+    date: "17/09/2022 02:41:45",
+    message: "Gente!"
+    },
+    {
+    userName: "Lucas",
+    date: "17/09/2022 02:41:45",
+    message: "sigamos!"
+    }])
+
+3. Listar todos los documentos en cada colección.
+
+  db.productos.find()
+  db.mensajes.find()
+
+4. Mostrar la cantidad de documentos almacenados en cada una de ellas.
+
+  db.productos.countDocuments()
+  db.mensajes.countDocuments()
+
+5. Realizar un CRUD sobre la colección de productos:
+
+  A- Agregar un producto más en la colección de productos
+
+    db.productos.insertOne({name: "Calculadora" , price: 900 , stock: 35,thumbnail: "foto Prolongador"})
+
+  B- Realizar una consulta por nombre de producto específico:
+
+    db.productos.find({name: “Calculadora”})
+
+	  I. Listar los productos con precio menor a 1000 pesos.
+
+      db.productos.find({price: {$lt:1000}})
+
+	  II. Listar los productos con precio entre los 1000 a 3000 pesos.
+
+      db.productos.find({price: {$gte:100, $lte:3000}})
+
+	  III. Listar los productos con precio mayor a 3000 pesos.
+
+      db.productos.find({price: {$gte:100, $lte:3000}})
+
+    IV- Realizar una consulta que traiga sólo el nombre del tercer producto más barato.
+
+      db.productos.find({},{name:1,_id:0}).sort({price:1}).skip(2).limit(1)
+
+  C- Hacer una actualización sobre todos los productos,agregando el campo stock a todos ellos con un valor de 100.
+
+    db.productos.updateMany({stock: {$exists:true}},{$set:{stock:100}})
+
+    db.productos.find()
+
+  D- Cambiar el stock a cero de los productos con precios mayores a 4000 pesos.
+
+    db.productos.updateMany({price: {$gt:400}},{$set:{stock:0}})
+
+    db.productos.find({price: {$gt:400}})
+
+  E- Borrar los productos con precio menor a 1000 pesos
+
+    db.poductos.find({price: {$lt:1000}})
+    db.poductos.deleteMany({price: {$lt:1000}})
+    db.poductos.find({price: {$lt:1000}})
