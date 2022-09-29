@@ -1,0 +1,12 @@
+[
+  {
+    "name": "JavaScript",
+    "description": "Curso de JavaScript",
+    "code": "38927",
+    "image": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-javascript-software-develop-command-language-512.png",
+    "price": 230,
+    "stock": 40,
+    "id": 1,
+    "timestamp": "Wed Sep 28 2022"
+  }
+]
