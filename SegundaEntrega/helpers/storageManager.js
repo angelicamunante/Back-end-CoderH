@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 
+//Reemplazo de __dirname:
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -88,6 +89,7 @@ class storageManager {
   }
   async deleteById(id) {
     const listObjs = await this.getAll();
+    //Comprobamos que exista el producto en el archivo:
     const findObj = listObjs.filter(
       (item) => item.id.toString() === id.toString()
     );
@@ -109,19 +111,25 @@ class storageManager {
     }
   }
   async postById(idc, object) {
+    //idc: id del carrito
+    //object: producto a agregar al carrito.
     try {
+      //Buscamos el carrito:
       const cartList = await this.getAll();
 
       const cartFiltered = cartList.filter(
         (item) => item.id.toString() === idc.toString()
       );
       if (!cartFiltered) throw new Error("No se encontró el carrito");
+      //Agregamos el producto al carrito:
       const newCart = cartFiltered[0];
       newCart.products.push(object);
 
+      //Incorporamos el carrito a la lista de carritos:
       const cartUpdated = cartList.map((item) =>
         item.id.toString() === idc.toString() ? newCart : item
       );
+      //Guardamos en la db:
       await fs.promises.writeFile(
         path.join(__dirname + `/../database/${this.archive}`),
         JSON.stringify(cartUpdated, null, 2)
@@ -132,23 +140,30 @@ class storageManager {
     }
   }
   async selectedDelete(idc, idp) {
+    //idc: id del carrito.
+    //idp: id del producto.
     try {
+      //Traemos todos los carritos:
       const cartList = await this.getAll();
+      //Buscamos el que necesitamos:
       const cartFiltered = cartList.filter(
         (item) => item.id.toString() === idc.toString()
       );
       if (!cartFiltered) throw new Error("No se encontró el carrito");
 
+      //Eliminamos el producto del carrito:
       const newCart = cartFiltered[0];
       const arrayProducts = newCart.products.filter(
         (item) => item.id.toString() !== idp.toString()
       );
       newCart.products = arrayProducts;
 
+      //Incorporamos el carrito a la lista de carritos:
       const cartUpdated = cartList.map((item) =>
         item.id.toString() === idc.toString() ? newCart : item
       );
 
+      //Guardamos en la db:
       await fs.promises.writeFile(
         path.join(__dirname + `/../database/${this.archive}`),
         JSON.stringify(cartUpdated, null, 2)

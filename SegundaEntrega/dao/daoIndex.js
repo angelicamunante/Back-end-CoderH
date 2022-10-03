@@ -7,6 +7,7 @@ import daoProductosFB from "./producto/daoProductosFB.js";
 import daoProductoMemo from "./producto/daoProductomemo.js";
 import daoCarritoMemo from "./carrito/daoCarritoMemo.js";
 
+//Lógica de los DAO:
 let daoProductos;
 let daoCarrito;
 const STORAGE = process.env.STORAGE;

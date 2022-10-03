@@ -3,6 +3,7 @@ class containerMongo {
     this.model = model;
   }
 
+  //Listar:
   async getAll() {
     try {
       const productList = await this.model.find({});
@@ -12,6 +13,7 @@ class containerMongo {
     }
   }
 
+  //Crear
   async save(object) {
     try {
       const resCreate = await this.model.create(object);
@@ -20,7 +22,7 @@ class containerMongo {
       console.log(e);
     }
   }
- 
+  //Traer por ID:
   async getById(id) {
     try {
       const resFind = await this.model.findOne({ _id: id });
@@ -29,7 +31,7 @@ class containerMongo {
       console.log(e);
     }
   }
-
+  //Actualizar:
   async updateOne(id, object) {
     try {
       const resUpdate = await this.model.findOneAndUpdate({ _id: id }, object);
@@ -38,7 +40,7 @@ class containerMongo {
       console.log(e);
     }
   }
- 
+  //Eliminar por ID:
   async deleteById(id) {
     try {
       const resDelete = await this.model.deleteOne({ _id: id });
@@ -47,8 +49,10 @@ class containerMongo {
       console.log(e);
     }
   }
- 
+  //Guardar un productos en el carrito:
   async postById(idc, object) {
+    //idc: id del carrito
+    //object: producto a agregar al carrito
     try {
       const carrito = await this.getById(idc);
       if (!carrito) throw new Error("No se encontró el carrito");
@@ -60,7 +64,10 @@ class containerMongo {
     }
   }
 
+  //Borramos el producto de un carrito:
   async selectedDelete(idc, idp) {
+    //idc: id del carrito.
+    //idp: id del producto.
     try {
       const carrito = await this.getById(idc);
       if (!carrito) throw new Error("No se encontró el carrito");

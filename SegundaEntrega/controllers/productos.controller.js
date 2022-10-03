@@ -1,5 +1,5 @@
 import { daoProductos } from "../dao/daoIndex.js";
-
+//~~~~~~~~~~Listar todos los productos~~~~~~~~~~~~~~~~
 const getAllProducts = async (req, res) => {
   try {
     const productList = await daoProductos.getAll();
@@ -13,6 +13,7 @@ const getAllProducts = async (req, res) => {
   }
 };
 
+//~~~~~~~~~~Obtener un producto~~~~~~~~~~~~~~~~~~~~~~
 const getOneProduct = async (req, res) => {
   const { id } = req.params;
   try {
@@ -27,6 +28,7 @@ const getOneProduct = async (req, res) => {
   }
 };
 
+//~~~~~~~~~~Crear productos~~~~~~~~~~~~~~~~~~~~~~~~~
 const createProduct = async (req, res) => {
   const { name, description, code, image, price, stock } = req.body;
   try {
@@ -38,6 +40,7 @@ const createProduct = async (req, res) => {
   }
 };
 
+//~~~~~~Editar un productos~~~~~~~~~~~~~~~~~~~~~~~~~~
 const updateProduct = async (req, res) => {
   const { id } = req.params;
   const { name, description, code, image, price, stock } = req.body;
@@ -50,6 +53,7 @@ const updateProduct = async (req, res) => {
   }
 };
 
+//~~~~~~~~~Eliminar un producto~~~~~~~~~~~~~~~~~~~~~~~
 const deleteProduct = async (req, res) => {
   const { id } = req.params;
   try {

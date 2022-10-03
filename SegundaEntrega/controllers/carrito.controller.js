@@ -32,9 +32,12 @@ const deleteCart = async (req, res) => {
 const addProductCart = async (req, res) => {
   const { idCarrito, idProducto } = req.params;
   try {
+    //Buscamos el producto:
     const product = await daoProductos.getById(idProducto);
+    //Si no lo encuentra:
     if (!product)
       return res.status(404).json({ error: "Producto no encontrado." });
+    //Si todo sale bien:
     await daoCarrito.postById(idCarrito, product);
     return res.json({ msg: "producto agregado al carrito con éxito." });
   } catch (error) {
