@@ -1,0 +1,477 @@
+Statistical profiling result from isolate-artillery.log, (728 ticks, 5 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     17    2.3%          /usr/lib/system/libsystem_pthread.dylib
+     12    1.6%          /usr/lib/system/libsystem_malloc.dylib
+      6    0.8%          /usr/lib/system/libsystem_c.dylib
+      6    0.8%          /usr/lib/libc++.1.dylib
+      1    0.1%          /usr/lib/system/libsystem_platform.dylib
+      1    0.1%          /usr/lib/system/libdispatch.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      3    0.4%    0.4%  JS: *resolve node:path:1095:10
+      2    0.3%    0.3%  JS: *normalizeString node:path:66:25
+      1    0.1%    0.1%  JS: ^resolve node:path:1095:10
+      1    0.1%    0.1%  JS: ^isURLInstance node:internal/url:1560:23
+      1    0.1%    0.1%  JS: ^importModuleDynamicallyWrap node:internal/vm/module:436:37
+      1    0.1%    0.1%  JS: *syncExports node:internal/bootstrap/loaders:304:14
+
+ [C++]:
+   ticks  total  nonlib   name
+    535   73.5%   78.1%  T node::IntervalHistogram::GetPercentileBigInt(v8::FunctionCallbackInfo<v8::Value> const&)
+     61    8.4%    8.9%  T _task_set_special_port
+     14    1.9%    2.0%  T _sigprocmask
+      8    1.1%    1.2%  T __kernelrpc_mach_port_move_member_trap
+      4    0.5%    0.6%  T _task_get_exception_ports
+      4    0.5%    0.6%  T ___bsdthread_terminate
+      3    0.4%    0.4%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      2    0.3%    0.3%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      2    0.3%    0.3%  t ___pfz_setup
+      2    0.3%    0.3%  t _Builtins_LoadIC_NoFeedback
+      2    0.3%    0.3%  t _Builtins_LoadIC_Megamorphic
+      2    0.3%    0.3%  t _Builtins_LoadIC
+      2    0.3%    0.3%  T node::cares_wrap::ChannelWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.3%    0.3%  T _mach_port_insert_right
+      1    0.1%    0.1%  t std::__1::__shared_ptr_pointer<char*, std::__1::default_delete<char []>, std::__1::allocator<char> >::__on_zero_shared_weak()
+      1    0.1%    0.1%  t non-virtual thunk to node::PerIsolatePlatformData::IdleTasksEnabled()
+      1    0.1%    0.1%  t __os_nospin_lock_unlock_slow
+      1    0.1%    0.1%  t _Builtins_ToBooleanForBaselineJump
+      1    0.1%    0.1%  t _Builtins_StringSubstring
+      1    0.1%    0.1%  t _Builtins_StringPrototypeLastIndexOf
+      1    0.1%    0.1%  t _Builtins_StringPrototypeEndsWith
+      1    0.1%    0.1%  t _Builtins_StringEqual
+      1    0.1%    0.1%  t _Builtins_StringAdd_CheckNone
+      1    0.1%    0.1%  t _Builtins_RegExpPrototypeExec
+      1    0.1%    0.1%  t _Builtins_RecordWriteSaveFP
+      1    0.1%    0.1%  t _Builtins_ObjectPrototypeHasOwnProperty
+      1    0.1%    0.1%  t _Builtins_LdaGlobalHandler
+      1    0.1%    0.1%  t _Builtins_KeyedLoadIC_Megamorphic
+      1    0.1%    0.1%  t _Builtins_JSBuiltinsConstructStub
+      1    0.1%    0.1%  t _Builtins_CreateClosureHandler
+      1    0.1%    0.1%  t _Builtins_CopyDataProperties
+      1    0.1%    0.1%  t _Builtins_CompileLazy
+      1    0.1%    0.1%  t _Builtins_Call_ReceiverIsNullOrUndefined_Baseline_Compact
+      1    0.1%    0.1%  t _Builtins_CallFunction_ReceiverIsNullOrUndefined
+      1    0.1%    0.1%  t _Builtins_CallFunction_ReceiverIsNotNullOrUndefined
+      1    0.1%    0.1%  t _Builtins_Add_Baseline
+      1    0.1%    0.1%  T _task_restartable_ranges_register
+      1    0.1%    0.1%  T _semaphore_signal
+      1    0.1%    0.1%  T _os_unfair_lock_lock_with_options
+      1    0.1%    0.1%  T _EVP_PKEY_asn1_find_str
+      1    0.1%    0.1%  T _ERR_load_RSA_strings
+      1    0.1%    0.1%  T _ERR_load_ASYNC_strings
+
+ [Summary]:
+   ticks  total  nonlib   name
+      9    1.2%    1.3%  JavaScript
+    671   92.2%   98.0%  C++
+     14    1.9%    2.0%  GC
+     43    5.9%          Shared libraries
+      5    0.7%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    511   85.7%   70.2%  T node::IntervalHistogram::GetPercentileBigInt(v8::FunctionCallbackInfo<v8::Value> const&)
+     11    1.8%    1.5%  T _sigprocmask
+      8    1.3%    1.1%  T __kernelrpc_mach_port_move_member_trap
+      5    0.8%    0.7%  t _Builtins_KeyedLoadIC_Megamorphic
+      4    0.7%    0.5%  t _Builtins_FindOrderedHashMapEntry
+      4    0.7%    0.5%  T _task_get_exception_ports
+      3    0.5%    0.4%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      3    0.5%    0.4%  t _Builtins_PromiseConstructor
+      3    0.5%    0.4%  t _Builtins_ArrayMap
+      3    0.5%    0.4%  t _Builtins_ArrayForEach
+      2    0.3%    0.3%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      2    0.3%    0.3%  t ___pfz_setup
+      2    0.3%    0.3%  t _Builtins_WeakMapPrototypeSet
+      2    0.3%    0.3%  t _Builtins_ReflectGet
+      2    0.3%    0.3%  t _Builtins_MapPrototypeGet
+      2    0.3%    0.3%  t _Builtins_LoadIC_NoFeedback
+      2    0.3%    0.3%  t _Builtins_LoadIC_Megamorphic
+      2    0.3%    0.3%  t _Builtins_LoadIC
+      2    0.3%    0.3%  t _Builtins_FindOrderedHashSetEntry
+      2    0.3%    0.3%  T node::cares_wrap::ChannelWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.2%    0.1%  t std::__1::__shared_ptr_pointer<char*, std::__1::default_delete<char []>, std::__1::allocator<char> >::__on_zero_shared_weak()
+      1    0.2%    0.1%  t non-virtual thunk to node::PerIsolatePlatformData::IdleTasksEnabled()
+      1    0.2%    0.1%  t _Builtins_ToBooleanForBaselineJump
+      1    0.2%    0.1%  t _Builtins_StringSubstring
+      1    0.2%    0.1%  t _Builtins_StringPrototypeLastIndexOf
+      1    0.2%    0.1%  t _Builtins_StringPrototypeEndsWith
+      1    0.2%    0.1%  t _Builtins_StringAdd_CheckNone
+      1    0.2%    0.1%  t _Builtins_RegExpPrototypeExec
+      1    0.2%    0.1%  t _Builtins_ObjectPrototypeHasOwnProperty
+      1    0.2%    0.1%  t _Builtins_MapPrototypeSet
+      1    0.2%    0.1%  t _Builtins_LdaGlobalHandler
+      1    0.2%    0.1%  t _Builtins_JSBuiltinsConstructStub
+      1    0.2%    0.1%  t _Builtins_CreateClosureHandler
+      1    0.2%    0.1%  t _Builtins_CopyDataProperties
+      1    0.2%    0.1%  t _Builtins_Call_ReceiverIsNullOrUndefined_Baseline_Compact
+      1    0.2%    0.1%  t _Builtins_CallFunction_ReceiverIsNullOrUndefined
+      1    0.2%    0.1%  t _Builtins_CallFunction_ReceiverIsNotNullOrUndefined
+      1    0.2%    0.1%  t _Builtins_Add_Baseline
+      1    0.2%    0.1%  T _task_set_special_port
+      1    0.2%    0.1%  T _semaphore_signal
+      1    0.2%    0.1%  T _os_unfair_lock_lock_with_options
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    535   73.5%  T node::IntervalHistogram::GetPercentileBigInt(v8::FunctionCallbackInfo<v8::Value> const&)
+    263   49.2%    JS: ^compileFunction node:vm:316:25
+    261   99.2%      JS: ^wrapSafe node:internal/modules/cjs/loader:1073:18
+    256   98.1%        JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+    251   98.0%          JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+    251  100.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      5    2.0%          JS: ~Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      5  100.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      5    1.9%        JS: ~Module._compile node:internal/modules/cjs/loader:1113:37
+      5  100.0%          JS: ~Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      5  100.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+     79   14.8%    JS: ^readSync node:fs:700:18
+     79  100.0%      JS: ^tryReadSync node:fs:436:21
+     79  100.0%        JS: ^readFileSync node:fs:457:22
+     73   92.4%          JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+     73  100.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      5    6.3%          JS: ~Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      4   80.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      1   20.0%            JS: ~Module.load node:internal/modules/cjs/loader:1025:33
+      1    1.3%          JS: ~Module._extensions..json node:internal/modules/cjs/loader:1218:39
+      1  100.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+     55   10.3%    JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+     49   89.1%      JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      5   10.2%        JS: ~<anonymous> node:http2:1:1
+      5  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      5  100.0%            JS: ^compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      3    6.1%        JS: ~<anonymous> node:tls:1:1
+      3  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      3    6.1%        JS: ~<anonymous> node:internal/process/esm_loader:1:1
+      3  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      3    6.1%        JS: ~<anonymous> node:http:1:1
+      3  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3  100.0%            JS: ~compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      2    4.1%        JS: ~initializeCJSLoader node:internal/process/pre_execution:541:29
+      2  100.0%          JS: ~prepareMainThreadExecution node:internal/process/pre_execution:37:36
+      2  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    4.1%        JS: ~<anonymous> node:internal/readline/interface:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2    4.1%        JS: ~<anonymous> node:internal/modules/esm/loader:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2    4.1%        JS: ~<anonymous> node:internal/modules/esm/load:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2    4.1%        JS: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2    4.1%        JS: ~<anonymous> node:internal/http2/core:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2    4.1%        JS: ~<anonymous> node:internal/fs/promises:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2    4.1%        JS: ~<anonymous> node:internal/cluster/primary:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2    4.1%        JS: ~<anonymous> node:child_process:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2    4.1%        JS: ~<anonymous> node:assert:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2    4.1%        JS: ~<anonymous> node:_http_client:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    2.0%        JS: ~setupWebCrypto node:internal/process/pre_execution:249:24
+      1  100.0%          JS: ~prepareMainThreadExecution node:internal/process/pre_execution:37:36
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.0%        JS: ~setupInspectorHooks node:internal/process/pre_execution:378:29
+      1  100.0%          JS: ~prepareMainThreadExecution node:internal/process/pre_execution:37:36
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.0%        JS: ~prepareMainThreadExecution node:internal/process/pre_execution:37:36
+      1  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.0%        JS: ~lazyLoadStreams node:fs:2895:25
+      1  100.0%          JS: ~get ReadStream node:fs:3038:17
+      1  100.0%            t _Builtins_ReflectGet
+      1    2.0%        JS: ~initializeSourceMapsHandlers node:internal/process/pre_execution:580:38
+      1  100.0%          JS: ~prepareMainThreadExecution node:internal/process/pre_execution:37:36
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.0%        JS: ~get BlockList node:net:1961:16
+      1  100.0%          JS: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    2.0%        JS: ~<anonymous> node:net:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    2.0%        JS: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    2.0%        JS: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    2.0%        JS: ~<anonymous> node:internal/modules/esm/get_format:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    2.0%        JS: ~<anonymous> node:internal/http2/compat:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    2.0%        JS: ~<anonymous> node:internal/child_process:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    2.0%        JS: ~<anonymous> node:_http_common:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            JS: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      5    9.1%      JS: ^compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      5  100.0%        JS: ^loadBuiltinModule node:internal/modules/cjs/helpers:45:27
+      5  100.0%          JS: ^Module._load node:internal/modules/cjs/loader:807:24
+      5  100.0%            JS: ^Module.require node:internal/modules/cjs/loader:1053:36
+      1    1.8%      JS: ~compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      1  100.0%        JS: ~loadBuiltinModule node:internal/modules/cjs/helpers:45:27
+      1  100.0%          JS: ~Module._load node:internal/modules/cjs/loader:807:24
+      1  100.0%            JS: ~Module.require node:internal/modules/cjs/loader:1053:36
+     29    5.4%    JS: ^read node:internal/modules/package_json_reader:16:14
+     20   69.0%      JS: ^readPackage node:internal/modules/cjs/loader:326:21
+     18   90.0%        JS: ^resolveExports node:internal/modules/cjs/loader:519:24
+     18  100.0%          JS: ^Module._findPath node:internal/modules/cjs/loader:541:28
+     17   94.4%            JS: ^Module._resolveFilename node:internal/modules/cjs/loader:904:35
+      1    5.6%            JS: ~Module._resolveFilename node:internal/modules/cjs/loader:904:35
+      1    5.0%        JS: ~resolveExports node:internal/modules/cjs/loader:519:24
+      1  100.0%          JS: ^Module._findPath node:internal/modules/cjs/loader:541:28
+      1  100.0%            JS: ~Module._resolveFilename node:internal/modules/cjs/loader:904:35
+      1    5.0%        JS: ^readPackageScope node:internal/modules/cjs/loader:368:26
+      1  100.0%          JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1  100.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      9   31.0%      JS: *Module._findPath node:internal/modules/cjs/loader:541:28
+      9  100.0%        JS: ^Module._resolveFilename node:internal/modules/cjs/loader:904:35
+      9  100.0%          JS: ^Module._load node:internal/modules/cjs/loader:807:24
+      9  100.0%            JS: *Module.require node:internal/modules/cjs/loader:1053:36
+      7    1.3%    JS: ^openSync node:fs:583:18
+      7  100.0%      JS: ^readFileSync node:fs:457:22
+      7  100.0%        JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      7  100.0%          JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      7  100.0%            JS: ^Module._load node:internal/modules/cjs/loader:807:24
+
+     61    8.4%  T _task_set_special_port
+      1    1.6%    JS: ^realpathSync node:fs:2462:22
+      1  100.0%      JS: ^toRealPath node:internal/modules/cjs/loader:440:20
+      1  100.0%        JS: ^tryFile node:internal/modules/cjs/loader:431:17
+      1  100.0%          JS: ^tryExtensions node:internal/modules/cjs/loader:447:23
+      1  100.0%            JS: ^Module._findPath node:internal/modules/cjs/loader:541:28
+
+     17    2.3%  /usr/lib/system/libsystem_pthread.dylib
+      2   11.8%    JS: *compileFunction node:vm:316:25
+      2  100.0%      JS: ^wrapSafe node:internal/modules/cjs/loader:1073:18
+      2  100.0%        JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      2  100.0%          JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      2  100.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      1    5.9%    JS: ~require node:internal/modules/cjs/helpers:102:31
+      1  100.0%      JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/server.js:1:1
+      1  100.0%        JS: ~Module._compile node:internal/modules/cjs/loader:1113:37
+      1  100.0%          JS: ~Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1  100.0%            JS: ~Module.load node:internal/modules/cjs/loader:1025:33
+      1    5.9%    JS: ~realpathSync node:fs:2462:22
+      1  100.0%      JS: ~toRealPath node:internal/modules/cjs/loader:440:20
+      1  100.0%        JS: ~Module._findPath node:internal/modules/cjs/loader:541:28
+      1  100.0%          JS: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            JS: ~executeUserEntryPoint node:internal/modules/run_main:75:31
+      1    5.9%    JS: ~random /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/bcryptjs/dist/bcrypt.js:67:20
+      1  100.0%      JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/bcryptjs/dist/bcrypt.js:43:17
+      1  100.0%        JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/bcryptjs/dist/bcrypt.js:34:10
+      1  100.0%          JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/bcryptjs/dist/bcrypt.js:1:1
+      1  100.0%            JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      1    5.9%    JS: ~processConnectionOptions /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/helpers/processConnectionOptions.js:6:34
+      1  100.0%      JS: ~Connection.openUri /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/connection.js:680:40
+      1  100.0%        JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/index.js:412:49
+      1  100.0%          JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/helpers/promiseOrCallback.js:40:22
+      1  100.0%            t _Builtins_PromiseConstructor
+      1    5.9%    JS: ~prepareMainThreadExecution node:internal/process/pre_execution:37:36
+      1  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.9%    JS: ~patchProcessObject node:internal/process/pre_execution:113:28
+      1  100.0%      JS: ~prepareMainThreadExecution node:internal/process/pre_execution:37:36
+      1  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.9%    JS: ~parseAuthority /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/whatwg-url/lib/url-state-machine.js:731:71
+      1  100.0%      JS: ~URLStateMachine /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/whatwg-url/lib/url-state-machine.js:481:25
+      1  100.0%        JS: ~module.exports.basicURLParse /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/whatwg-url/lib/url-state-machine.js:1206:41
+      1  100.0%          JS: ~URLImpl /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/whatwg-url/lib/URL-impl.js:7:14
+      1  100.0%            JS: ~exports.setup /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/whatwg-url/lib/URL.js:49:17
+      1    5.9%    JS: ~nextTick node:internal/process/task_queues:103:18
+      1  100.0%      JS: ~immediate /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/helpers/immediate.js:14:36
+      1  100.0%        JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/connection.js:574:34
+      1  100.0%          JS: ~promiseOrCallback /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/helpers/promiseOrCallback.js:8:44
+      1  100.0%            JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/connection.js:567:18
+      1    5.9%    JS: ~insert node:internal/timers:355:16
+      1  100.0%      JS: ~setUnrefTimeout node:internal/timers:377:25
+      1  100.0%        JS: ~setStreamTimeout node:internal/stream_base_commons:237:26
+      1  100.0%          JS: ~makeConnection /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1  100.0%            JS: ~connect /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1    5.9%    JS: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:45:35
+      1  100.0%      JS: ~getStderr node:internal/bootstrap/switches/is_main_thread:168:19
+      1  100.0%        JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/debug/src/node.js:1:1
+      1  100.0%          JS: ~Module._compile node:internal/modules/cjs/loader:1113:37
+      1  100.0%            JS: ~Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1    5.9%    JS: ~basename node:path:1310:11
+      1  100.0%      JS: ~findLongestRegisteredExtension node:internal/modules/cjs/loader:460:40
+      1  100.0%        JS: ~Module.load node:internal/modules/cjs/loader:1025:33
+      1  100.0%          JS: ~Module._load node:internal/modules/cjs/loader:807:24
+      1  100.0%            JS: ~Module.require node:internal/modules/cjs/loader:1053:36
+      1    5.9%    JS: ~applyHooks /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/helpers/model/applyHooks.js:40:20
+      1  100.0%      JS: ~compile /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/model.js:5013:33
+      1  100.0%        JS: ~Mongoose._model /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/index.js:613:37
+      1  100.0%          JS: ~Mongoose.model /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/index.js:542:36
+      1  100.0%            JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/models/User.model.js:1:1
+      1    5.9%    JS: ~add /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/schema.js:581:36
+      1  100.0%      JS: ~Schema /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/schema.js:96:16
+      1  100.0%        JS: ~Schema /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/schema.js:96:16
+      1  100.0%          JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/models/User.model.js:1:1
+      1  100.0%            JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      1    5.9%    JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/streamroller/node_modules/debug/src/node.js:1:1
+      1  100.0%      JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      1  100.0%        JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1  100.0%          JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      1  100.0%            JS: ^Module._load node:internal/modules/cjs/loader:807:24
+      1    5.9%    JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/log4js/lib/appenders/index.js:113:5
+      1  100.0%      JS: ~onlyOnMaster /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/log4js/lib/clustering.js:87:17
+      1  100.0%        JS: ~createAppender /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/log4js/lib/appenders/index.js:74:24
+      1  100.0%          JS: ~getAppender /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/log4js/lib/appenders/index.js:59:21
+      1  100.0%            JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/log4js/lib/appenders/index.js:120:9
+
+     14    1.9%  T _sigprocmask
+      2   14.3%    JS: *compileFunction node:vm:316:25
+      2  100.0%      JS: ^wrapSafe node:internal/modules/cjs/loader:1073:18
+      2  100.0%        JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      2  100.0%          JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      2  100.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      1    7.1%    JS: ~toRealPath node:internal/modules/cjs/loader:440:20
+      1  100.0%      JS: ~Module._findPath node:internal/modules/cjs/loader:541:28
+      1  100.0%        JS: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%          JS: ~executeUserEntryPoint node:internal/modules/run_main:75:31
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    7.1%    JS: ~setDifference /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/utils.js:611:23
+      1  100.0%      JS: ~parseOptions /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/connection_string.js:195:22
+      1  100.0%        JS: ~MongoClient /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/mongo_client.js:43:16
+      1  100.0%          JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/mongo_client.js:234:43
+      1  100.0%            JS: ~maybeCallback /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/utils.js:335:23
+      1    7.1%    JS: ~retry /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/graceful-fs/graceful-fs.js:397:16
+      1  100.0%      JS: ^resetQueue /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/graceful-fs/graceful-fs.js:383:21
+      1  100.0%        JS: ^closeSync /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/graceful-fs/graceful-fs.js:72:24
+      1  100.0%          JS: ^readFileSync node:fs:457:22
+      1  100.0%            JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1    7.1%    JS: ~URLWithoutHost /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb-connection-string-url/lib/index.js:74:1
+      1  100.0%      JS: ~ConnectionString /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb-connection-string-url/lib/index.js:82:16
+      1  100.0%        JS: ~parseOptions /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/connection_string.js:195:22
+      1  100.0%          JS: ~MongoClient /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/mongo_client.js:43:16
+      1  100.0%            JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/mongo_client.js:234:43
+      1    7.1%    JS: ~URLSearchParamsImpl /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/whatwg-url/lib/URLSearchParams-impl.js:5:14
+      1  100.0%      JS: ~exports.setup /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/whatwg-url/lib/URLSearchParams.js:62:17
+      1  100.0%        JS: ~exports.create /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/whatwg-url/lib/URLSearchParams.js:50:18
+      1  100.0%          JS: ~exports.createImpl /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/whatwg-url/lib/URLSearchParams.js:55:22
+      1  100.0%            JS: ~URLImpl /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/whatwg-url/lib/URL-impl.js:7:14
+      1    7.1%    JS: ~Schema.path /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/schema.js:895:33
+      1  100.0%      JS: ~add /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/schema.js:581:36
+      1  100.0%        JS: ~Schema /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/schema.js:96:16
+      1  100.0%          JS: ~Schema /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/schema.js:96:16
+      1  100.0%            JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/models/User.model.js:1:1
+      1    7.1%    JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:1:1
+      1  100.0%      JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      1  100.0%        JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1  100.0%          JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      1  100.0%            JS: ^Module._load node:internal/modules/cjs/loader:807:24
+      1    7.1%    JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/debug/src/node.js:1:1
+      1  100.0%      JS: ~Module._compile node:internal/modules/cjs/loader:1113:37
+      1  100.0%        JS: ~Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1  100.0%          JS: ~Module.load node:internal/modules/cjs/loader:1025:33
+      1  100.0%            JS: ~Module._load node:internal/modules/cjs/loader:807:24
+      1    7.1%    JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/connect-mongo/build/main/index.js:1:1
+      1  100.0%      JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      1  100.0%        JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1  100.0%          JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      1  100.0%            JS: ^Module._load node:internal/modules/cjs/loader:807:24
+
+     12    1.6%  /usr/lib/system/libsystem_malloc.dylib
+      1    8.3%    t _Builtins_ReflectGet
+      1  100.0%      JS: ^getOwn node:internal/bootstrap/loaders:187:16
+      1  100.0%        JS: ^syncExports node:internal/bootstrap/loaders:304:14
+      1  100.0%          JS: ~<anonymous> node:internal/bootstrap/loaders:290:15
+      1  100.0%            T node::IntervalHistogram::GetPercentileBigInt(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    8.3%    t _Builtins_KeyedLoadIC_Megamorphic
+      1  100.0%      JS: ^Module._findPath node:internal/modules/cjs/loader:541:28
+      1  100.0%        JS: ^Module._resolveFilename node:internal/modules/cjs/loader:904:35
+      1  100.0%          JS: ^Module._load node:internal/modules/cjs/loader:807:24
+      1  100.0%            JS: ^Module.require node:internal/modules/cjs/loader:1053:36
+      1    8.3%    t _Builtins_FindOrderedHashMapEntry
+      1  100.0%      JS: *readPackageScope node:internal/modules/cjs/loader:368:26
+      1  100.0%        JS: ^trySelf node:internal/modules/cjs/loader:488:17
+      1  100.0%          JS: ^Module._resolveFilename node:internal/modules/cjs/loader:904:35
+      1  100.0%            JS: ^Module._load node:internal/modules/cjs/loader:807:24
+      1    8.3%    t _Builtins_EphemeronKeyBarrierSaveFP
+      1  100.0%      t _Builtins_WeakMapPrototypeSet
+      1  100.0%        JS: ^compileFunction node:vm:316:25
+      1  100.0%          JS: ^wrapSafe node:internal/modules/cjs/loader:1073:18
+      1  100.0%            JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      1    8.3%    JS: ~resolvePackageTargetString node:internal/modules/esm/resolve:330:36
+      1  100.0%      JS: ^resolvePackageTarget node:internal/modules/esm/resolve:424:30
+      1  100.0%        JS: ^resolvePackageTarget node:internal/modules/esm/resolve:424:30
+      1  100.0%          JS: ^packageExportsResolve node:internal/modules/esm/resolve:530:31
+      1  100.0%            JS: ^resolveExports node:internal/modules/cjs/loader:519:24
+      1    8.3%    JS: ~resetQueue /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/graceful-fs/graceful-fs.js:383:21
+      1  100.0%      JS: ^closeSync /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/graceful-fs/graceful-fs.js:72:24
+      1  100.0%        JS: ^readFileSync node:fs:457:22
+      1  100.0%          JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1  100.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      1    8.3%    JS: ~normalizeString node:path:66:25
+      1  100.0%      JS: ~resolve node:path:1095:10
+      1  100.0%        JS: ~patchProcessObject node:internal/process/pre_execution:113:28
+      1  100.0%          JS: ~prepareMainThreadExecution node:internal/process/pre_execution:37:36
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    8.3%    JS: ~<anonymous> node:internal/dns/utils:252:39
+      1  100.0%      t _Builtins_ArrayForEach
+      1  100.0%        JS: ~bindDefaultResolver node:internal/dns/utils:250:29
+      1  100.0%          JS: ~<anonymous> node:dns:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    8.3%    JS: ^Readable.on node:internal/streams/readable:886:33
+      1  100.0%      JS: ^once node:events:646:44
+      1  100.0%        JS: ~Socket.connect node:net:1045:36
+      1  100.0%          JS: ~connect node:_tls_wrap:1605:35
+      1  100.0%            JS: ~makeConnection /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/cmap/connect.js:256:24
+
+      8    1.1%  T __kernelrpc_mach_port_move_member_trap
+      2   25.0%    JS: *compileFunction node:vm:316:25
+      2  100.0%      JS: ^wrapSafe node:internal/modules/cjs/loader:1073:18
+      2  100.0%        JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      2  100.0%          JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      2  100.0%            JS: ^Module.load node:internal/modules/cjs/loader:1025:33
+      1   12.5%    JS: ~value node:internal/console/constructor:337:20
+      1  100.0%      JS: ~log node:internal/console/constructor:376:6
+      1  100.0%        T node::IntervalHistogram::GetPercentileBigInt(v8::FunctionCallbackInfo<v8::Value> const&)
+      1  100.0%          JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/config/mongo.js:1:1
+      1  100.0%            JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      1   12.5%    JS: ~toString node:buffer:789:46
+      1  100.0%      JS: ~readFileSync node:fs:457:22
+      1  100.0%        JS: ~Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1  100.0%          JS: ~Module.load node:internal/modules/cjs/loader:1025:33
+      1  100.0%            JS: ~Module._load node:internal/modules/cjs/loader:807:24
+      1   12.5%    JS: ~realpathSync node:fs:2462:22
+      1  100.0%      JS: ~toRealPath node:internal/modules/cjs/loader:440:20
+      1  100.0%        JS: ~tryFile node:internal/modules/cjs/loader:431:17
+      1  100.0%          JS: ~tryExtensions node:internal/modules/cjs/loader:447:23
+      1  100.0%            JS: ~Module._findPath node:internal/modules/cjs/loader:541:28
+      1   12.5%    JS: ~patchProcessObject node:internal/process/pre_execution:113:28
+      1  100.0%      JS: ~prepareMainThreadExecution node:internal/process/pre_execution:37:36
+      1  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1   12.5%    JS: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:45:35
+      1  100.0%      JS: ~getStderr node:internal/bootstrap/switches/is_main_thread:168:19
+      1  100.0%        JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/debug/src/node.js:1:1
+      1  100.0%          JS: ~Module._compile node:internal/modules/cjs/loader:1113:37
+      1  100.0%            JS: ~Module._extensions..js node:internal/modules/cjs/loader:1168:37
+      1   12.5%    JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/connection_string.js:1088:13
+      1  100.0%      t _Builtins_ArrayFilter
+      1  100.0%        JS: ~<anonymous> /Users/angelica/Back-end_CoderH/Desafios/Desafio16/node_modules/mongodb/lib/connection_string.js:1:1
+      1  100.0%          JS: ^Module._compile node:internal/modules/cjs/loader:1113:37
+      1  100.0%            JS: ^Module._extensions..js node:internal/modules/cjs/loader:1168:37
+
