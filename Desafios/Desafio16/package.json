@@ -2,11 +2,11 @@
   "name": "desafio16",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "node benchmark.js",
     "dev": "nodemon server.js -p 5001",
-    "start": "0x server.js -p 5001"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
