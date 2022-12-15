@@ -1,0 +1,13 @@
+[2022-12-14T21:07:18.333] [INFO] default - Método GET: ruta "/"
+[2022-12-14T21:07:18.407] [WARN] default - Ruta /favicon.ico no existe.
+[2022-12-14T21:07:20.284] [INFO] default - Método GET: ruta "/"
+[2022-12-14T21:07:20.313] [WARN] default - Ruta /favicon.ico no existe.
+[2022-12-14T21:07:20.974] [INFO] default - Método GET: ruta "/productos"
+[2022-12-14T21:08:05.134] [WARN] default - Ruta /favicon.ico no existe.
+[2022-12-14T21:08:06.076] [INFO] default - Método GET: ruta "/login"
+[2022-12-14T21:08:06.147] [WARN] default - Ruta /favicon.ico no existe.
+[2022-12-14T21:08:07.636] [INFO] default - Método GET: ruta "/info"
+[2022-12-14T21:08:07.691] [WARN] default - Ruta /favicon.ico no existe.
+[2022-12-14T21:08:09.601] [INFO] default - Método GET: ruta "/register"
+[2022-12-14T21:08:09.628] [WARN] default - Ruta /favicon.ico no existe.
+[2022-12-14T21:08:10.653] [INFO] default - Método GET: ruta "/productos"
