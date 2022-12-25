@@ -1,0 +1,66 @@
+{
+	"status": 200,
+	"msg": "ok",
+	"data": [
+		{
+			"_id": "632c7cf57b78ac4479fc40c5",
+			"name": "Mochila chica",
+			"description": "Ideal para la escuela",
+			"code": "133228",
+			"image": "https://cdn3.iconfinder.com/data/icons/education-209/64/bag-pack-container-school-512.png",
+			"price": 4000,
+			"stock": 40,
+			"createdAt": "2022-09-22T15:19:17.012Z",
+			"updatedAt": "2022-09-22T15:19:17.012Z",
+			"__v": 0
+		},
+		{
+			"_id": "632c7d297b78ac4479fc40c8",
+			"name": "Mochila grande Spiderman",
+			"description": "La mochila de Peter Parker",
+			"code": "133266",
+			"image": "https://cdn3.iconfinder.com/data/icons/education-209/64/bag-pack-container-school-512.png",
+			"price": 7000,
+			"stock": 40,
+			"createdAt": "2022-09-22T15:20:09.348Z",
+			"updatedAt": "2022-09-22T15:20:09.348Z",
+			"__v": 0
+		},
+		{
+			"_id": "632c7d767b78ac4479fc40cc",
+			"name": "Lapiz de superman genial",
+			"description": "Lapiz color rojo de tamaño grande",
+			"code": "117211",
+			"image": "https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationery-school-256.png",
+			"price": 1500,
+			"stock": 10,
+			"createdAt": "2022-09-22T15:21:26.047Z",
+			"updatedAt": "2022-09-22T23:09:51.365Z",
+			"__v": 0
+		},
+		{
+			"_id": "632ceb145fcb81a4e51e58c1",
+			"name": "lapicera de fornite",
+			"description": "la mejor lapicera",
+			"code": "117211",
+			"image": "https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationery-school-256.png",
+			"price": 1200,
+			"stock": 10,
+			"createdAt": "2022-09-22T23:09:09.008Z",
+			"updatedAt": "2022-09-22T23:09:09.008Z",
+			"__v": 0
+		},
+		{
+			"_id": "63a301c8162406d9a8bea8b8",
+			"name": "regla",
+			"description": "regla larga roja",
+			"code": "12313",
+			"image": "https://img.freepik.com/vector-premium/regla-centimetrica-icono-garabato-vectorial-suministros-oficina_499739-886.jpg?w=2000",
+			"price": 5000,
+			"stock": 50,
+			"createdAt": "2022-12-21T12:53:28.746Z",
+			"updatedAt": "2022-12-21T12:53:28.746Z",
+			"__v": 0
+		}
+	]
+}
